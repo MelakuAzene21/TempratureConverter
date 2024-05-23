@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temprature converter</title>
+    <style>
+        body{
+            background-color: darkgrey;
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        #myh1{
+            text-align: center;
+            position: relative;
+            top: 50px;
+            left: 30px;
+            font-size: 2.5em;
+            font-weight: 600;
+         margin-bottom: 25px;
+        }
+        #myh3{
+            text-align: center;
+            margin-top: 15px;
+            position: relative;
+            top: 60px;
+            left: 40px;
+
+        }
+        .mydiv{
+           position: absolute;
+           top: 40%;
+           left: 30%;
+           justify-content: center;
+           align-items: center;
+        }
+         #myinput{
+            font-size: large;
+            padding: 25px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            margin-bottom: 15px;
+
+        }
+      label{
+        color: forestgreen;
+        font-size: large;
+      }
+      button{
+        display: grid;
+       padding: 10px;
+       border: none;
+        border-radius: 10px;
+      }
+      button:hover{
+        font-size: large;
+      }
+      label{
+        margin-bottom: 15px;
+        
+      }
+
+       #demo{
+        background-color: white;
+        width: 100%;
+        height: 35px;
+        position: absolute;
+        top: 85%;
+        left: 30%;
+        padding: 20px;
+      }
+      
+      
+    </style>
+</head>
+<body>
+    <h1 id="myh1">Temprature Converter</h1>
+    <h3 id="myh3">Enter the Temprature in number</h3>
+   <form>
+    <div class="mydiv">
+     <input type="number" id="myinput"><br>
+     <button type="button" onclick="toFahiraniet()">Change to</button><label id ="label1" >Celisus to Fahiraniet</label><br>
+    <button type="button" onclick="toCelisus()">Change to</button><label >Fahiraniet to Celisus </label>
+   </div> 
+   
+  </form>
+<div  id="demo"> </div>
+<script>
+  const myinput1=document.getElementById("myinput");
+  //let x= myinput1.value;
+  let y=document.getElementById("demo");
+
+  function toFahiraniet(){
+    let m;
+    m= (myinput1.value * 9 / 5 + 32).toFixed(2)+" "+"Degree Fahiraniet";
+    y.innerHTML = m;
+  }
+  function toCelisus(){
+    let d;
+    d= ((myinput1.value-32)*5/9).toFixed(2)+" "+ "Degree Celisus";
+
+    y.innerHTML = d;
+  }
+</script>
+</body>
+</html>
